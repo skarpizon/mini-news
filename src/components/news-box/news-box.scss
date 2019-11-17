@@ -1,0 +1,86 @@
+@import '../../index.scss';
+
+.news{
+
+
+    .article-item{
+        background-color: $main_color;
+        margin-bottom:30px;
+        display: grid;
+        padding: 20px;
+        border-radius: 2rem;
+        grid-column-gap: 3%;
+        grid-row-gap: 20px;
+        $row_size: 32px;
+        grid-template-rows: repeat(3,auto) ;
+        grid-template-columns: 4fr 6fr 2fr;
+        grid-template-areas:    "img hh date"
+                                "img text text"
+                                "urll text text";
+        
+        .img{
+            grid-area: img;
+            text-align: center;
+            img {
+                max-width: 300px;
+                max-height: 200px;
+                border-radius: 2rem;
+            }
+        }
+        
+        h5 {
+            grid-area: hh;
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .source {
+            grid-area: urll;
+        }
+
+        a {
+            color:white;
+            text-decoration: none;
+            background-color: $second_color;
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+
+        .article{
+            &-date{
+                grid-area: date;
+                text-align: center;
+                font-size: 1.4rem;
+                color: $second_color;
+            }
+
+            &-text{
+                grid-area: text;
+                max-height: 150px;
+                overflow: auto;
+            }
+            
+        }
+        ::-webkit-scrollbar{
+            width:3px;
+        }
+        ::-webkit-scrollbar-thumb{
+            border-width:1px 1px 1px 2px;
+            border-color: #777;
+            background-color: $second_color;
+        }
+        ::-webkit-scrollbar-thumb:hover{
+            border-width: 1px 1px 1px 2px;
+            border-color: #555;
+            background-color: $second_color;
+        }
+        ::-webkit-scrollbar-track{
+            border-width:0;
+            background-color: #ddd;
+        }
+        ::-webkit-scrollbar-track:hover{
+            border-left: solid 1px #aaa;
+            background-color: #bbb;
+        }
+    }
+}

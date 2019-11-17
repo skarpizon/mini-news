@@ -1,0 +1,102 @@
+@import '../../index.scss';
+
+section {
+    margin: auto;
+}
+
+.sect-header{
+    background-color: $main_color;
+    margin-bottom: 30px;
+    .header{
+        width: 70%;
+        min-width: 400px;
+        max-width: 600px;
+        margin: auto;
+        padding: 10px 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+        a {
+            font-size: 1.5rem;
+            white-space: nowrap;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            background-color: $second_color;
+            padding: 5px 10px;
+            border-radius: 1rem;
+            margin: 0 10px;
+            &:hover{
+                background-color: darken($second_color, 5%);
+            }
+        }
+        .prf{
+            margin-left: auto;
+        }
+    }
+}
+
+.sect-main{
+    width: 80%;
+    min-width: 400px;
+    max-width: 800px;
+
+    .main{
+        background-color: $main_color;
+        border-radius: 2rem;
+        padding: 10px 20px 40px 20px;
+        font-size: 1.2rem;
+
+        h4 {
+            font-size: 1.4rem;
+            text-align: center;
+            margin: 10px 0px 30px 0px;
+            span {
+                white-space: nowrap;
+                font-size: 1.8rem;
+                color: darken($second_color,10%);
+            }
+        }
+        .link-list{
+            margin-left: 50px;
+            display: flex;
+            flex-direction: column;
+            a {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+}
+
+.sect-news{
+    width: 80%;
+    min-width: 400px;
+    max-width: 1000px;
+    .spinner-container{
+        height: 75vh;
+        margin: auto;
+    }
+}
+
+.sect-login-form{
+    width: 400px;
+    .spinner-container{
+        height: 250px;
+        margin: auto;
+        .lds-ring-big div {
+            border: 1rem solid white;
+            border-color: white transparent transparent transparent;
+          }
+    }
+}
+
+.sect-profile{
+    width: 500px;
+}
+
+.hide{
+    opacity: 0;
+}

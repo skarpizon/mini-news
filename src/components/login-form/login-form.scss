@@ -1,0 +1,62 @@
+@import '../../index.scss';
+
+.login-form{
+    height: 250px;
+    margin-top: 40px;
+    padding: 40px;
+    border-radius: 2rem;
+    background-color: $main_color;
+
+
+    h4 {
+        color: darken($second_color, 15%);
+        font-size: 1.6rem;
+        margin: 0 0 10px 0;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        align-items: center;
+
+        .field{
+            width: 90%;
+            font-size: 1rem;
+            height: 1.2rem;
+            display: block;
+            margin: 8px 0px;
+            border: 1px solid $second_color;
+            background-color: lighten($main_color, 20%);
+            border-radius: 0.6rem;
+            padding: 10px;
+            outline: none;
+            &:focus{
+                Box-shadow:0px 0px 0px 1px $second_color;
+                &:hover{
+                    border-color: $second_color;
+                }
+            }
+        }
+    
+        .btn{
+            font-size: 1.8rem;
+            background-color: $second_color;
+            color: white;
+            border: none;
+            border-radius: 0.6em;
+            margin-top: 20px;
+            padding: 10px 20px;
+            outline: none;
+            &:hover{
+                background-color: darken($second_color, 5%);
+            }
+        }
+
+        
+        .error {
+            color: darkred;
+            margin: 0;
+        }
+    }
+}

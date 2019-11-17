@@ -1,12 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import App from './components/app';
+import { DataServiceProvider } from './services/data-service-context';
+import store from './store';
+import './index.scss'
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+
+import DataService from './services/data-service';
+import ErrorBoundry from './components/error-boundry';
+
+const dataService = new DataService();
+
+ReactDOM.render(
+    <Provider store={store}>
+        <ErrorBoundry>
+            <DataServiceProvider value={dataService}>
+                <Router>
+                    <App />
+                </Router>
+            </DataServiceProvider>
+        </ErrorBoundry>
+    </Provider>,
+document.getElementById('root'));
