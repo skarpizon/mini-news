@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import StaticHeader from '../static-header/static-header';
 import './app.scss';
 import Main from '../main';
@@ -14,13 +14,14 @@ const App = () => {
             <StaticHeader />
             <Switch>
                 <Route path="/" component={Main} 
-                      exact />
+                    exact />
                 <Route path="/news" component={NewsBox}
                     exact />
                 <Route path="/profile" component={Profile} 
                         exact />
                 <Route path="/login" component={LoginForm}
                     exact />
+                <Route path="" component={Main}/>
             </Switch>
         </React.Fragment>
     );
