@@ -3,9 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logOut } from '../../actions';
 import './profile.scss';
-
-
-const imgPath = process.env.PUBLIC_URL + '/assets/images/';
+import logo from '../images/logo512.png';
 
 const Profile = ({isLoggedIn, user, logOut}) => {
 
@@ -18,7 +16,7 @@ const Profile = ({isLoggedIn, user, logOut}) => {
         <section className="sect-profile">
             <div className="profile">
                 <div className="i-block">
-                    <img src={user.img?user.img:`${imgPath}logo512.png`}/>
+                    <img src={user.img?user.img:logo}/>
                 </div>
                 <div className="i-block info">
                     <div>{user.name} <button className="btn-exit" onClick={() => {delete localStorage.user;logOut()}}>ЗАВЕРШИТЬ СЕССИЮ</button></div>

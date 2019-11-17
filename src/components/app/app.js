@@ -1,11 +1,12 @@
 import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import StaticHeader from '../static-header/static-header';
 import './app.scss';
 import Main from '../main';
 import NewsBox from '../news-box';
 import Profile from '../profile/';
 import LoginForm from '../login-form/login-form';
+
 
 const App = () => {
     
