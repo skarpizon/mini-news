@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import { logOut } from '../../actions';
 import './profile.scss';
 
+
+const imgPath = process.env.PUBLIC_URL + '/assets/images/';
+
 const Profile = ({isLoggedIn, user, logOut}) => {
 
     if (!isLoggedIn)
@@ -15,7 +18,7 @@ const Profile = ({isLoggedIn, user, logOut}) => {
         <section className="sect-profile">
             <div className="profile">
                 <div className="i-block">
-                    <img src={user.img?user.img:"/logo512.png"}/>
+                    <img src={user.img?user.img:`${imgPath}logo512.png`}/>
                 </div>
                 <div className="i-block info">
                     <div>{user.name} <button className="btn-exit" onClick={() => {delete localStorage.user;logOut()}}>ЗАВЕРШИТЬ СЕССИЮ</button></div>

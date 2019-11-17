@@ -7,6 +7,8 @@ import { itemsLoaded, itemsRequested, itemsError } from '../../actions';
 
 import './news-box.scss';
 
+const imgPath = process.env.PUBLIC_URL + '/assets/images/';
+
 function getDate(date) {
     const dat = new Date(date);
     return `${dat.getDay()}.${dat.getMonth()+1}.${dat.getFullYear()%100}`;
@@ -17,7 +19,7 @@ const Article = ({data}) => {
 
     return (
         <div className="article-item">
-            <div className="img"><img src={data.thread.main_image?data.thread.main_image:"/logo512.png"}/></div>
+            <div className="img"><img src={data.thread.main_image?data.thread.main_image:`${imgPath}logo512.png`}/></div>
             <h5>{data.title?data.title:data.thread.title}</h5>
             <span className="article-date">{getDate(data.published)}</span>
             <div className="source"><a href={data.url}>Источник</a></div>
